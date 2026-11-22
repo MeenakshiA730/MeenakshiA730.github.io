@@ -272,6 +272,12 @@
     .js .block { opacity: 1; transform: none; }
   }
 
+    .abyss-embed { margin: 18px 0 14px; }
+  .abyss-embed summary { cursor: pointer; font-family: var(--display); font-weight: 600; color: var(--moss); }
+  .abyss-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; margin-top: 12px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+  .abyss-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .abyss-note { font-size: .95rem; color: var(--muted); margin: 8px 0 0; }
+
   @media (max-width: 860px) {
     .hero .wrap, .feature, .row, .edu, .about { grid-template-columns: 1fr; gap: 28px; }
     .hero { padding-top: 40px; }
@@ -358,6 +364,7 @@
         <button type="button" data-filter="dataeng" aria-pressed="false">Data engineering</button>
         <button type="button" data-filter="analytics" aria-pressed="false">Analytics and dashboards</button>
         <button type="button" data-filter="climate" aria-pressed="false">Climate and sustainability</button>
+        <button type="button" data-filter="web" aria-pressed="false">Web and 3D</button>
       </div>
 
       <article class="feature" data-tags="ml analytics climate">
@@ -401,6 +408,33 @@
       </article>
 
       <div class="rows">
+        <article class="row" data-tags="web">
+          <div>
+            <h3>ABYSS: interactive deep-sea exploration website</h3>
+            <p class="meta">Personal project | Deployed on Vercel</p>
+            <p style="margin:0 0 6px"><a class="demo-link" href="https://abyss-green-eight.vercel.app/" target="_blank" rel="noopener">Live demo</a></p>
+            <p style="margin:0"><a class="demo-link" href="https://github.com/MeenakshiA730/abyss" target="_blank" rel="noopener">Read the code on GitHub</a></p>
+          </div>
+          <div>
+            <p>A scroll-driven 3D website where you descend through four ocean zones, from Sunlight to the Abyss. A live HUD shows depth, pressure, temperature and oxygen, all driven by your scroll position, with smooth scrolling and a Field Guide to the sea life you meet.</p>
+            <ul>
+              <li>Created all sea life procedurally in code with no model files: instanced schooling fish, glowing jellyfish, anglerfish and swaying seagrass, with zone-based lighting and fog.</li>
+              <li>Diagnosed a scene-wide flicker by bisecting the render tree with URL debug flags and traced it to a camera lookAt feedback loop. Fixed it with a persistent, interpolated target.</li>
+              <li>Improved frame rate from <span class="stat">9 to 45–60 FPS</span> on an integrated GPU by disabling the logarithmic depth buffer, capping pixel ratio and removing a post-processing pass.</li>
+            </ul>
+            <details class="abyss-embed">
+              <summary>Preview the demo on this page</summary>
+              <div class="abyss-frame">
+                <iframe src="https://abyss-green-eight.vercel.app/" title="ABYSS interactive deep-sea website demo" loading="lazy" allow="fullscreen" referrerpolicy="no-referrer"></iframe>
+              </div>
+              <p class="abyss-note">Works best on a desktop browser. <a href="https://abyss-green-eight.vercel.app/" target="_blank" rel="noopener">Open it full screen</a> for the full experience.</p>
+            </details>
+            <ul class="chips" aria-label="Tools used">
+              <li>React</li><li>TypeScript</li><li>Vite</li><li>Three.js</li><li>React Three Fiber</li><li>Motion</li><li>Lenis</li>
+            </ul>
+          </div>
+        </article>
+
         <article class="row" data-tags="ml dataeng">
           <div>
             <h3>Real-time e-commerce recommendation system</h3>
@@ -510,6 +544,8 @@
         <dd class="chipset"><span class="used">Python</span><span>SQL</span><span>C</span><span>C++</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Cassandra</span></dd>
         <dt>Analytics and visualization</dt>
         <dd class="chipset"><span class="used">Power BI</span><span>Tableau</span><span>Excel</span><span>Google Data Studio</span><span>Matplotlib</span><span>Seaborn</span><span>business intelligence</span><span>data warehousing</span></dd>
+        <dt>Web and 3D</dt>
+        <dd class="chipset"><span class="used">React</span><span class="used">TypeScript</span><span class="used">Vite</span><span class="used">Three.js</span><span class="used">React Three Fiber</span><span class="used">Vercel</span></dd>
         <dt>Tools</dt>
         <dd class="chipset"><span class="used">Git</span><span class="used">Jupyter Notebook</span><span>data structures and algorithms</span></dd>
       </dl>
